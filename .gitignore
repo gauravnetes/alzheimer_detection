@@ -1,0 +1,23 @@
+# Virtual Environment
+.venv/
+venv/
+
+# Data - Do not track large datasets
+Alzheimer_Dataset/data/
+
+# Saved models - Do not track large model files
+Alzheimer_Dataset/saved_models/
+
+# Reports - Generated artifacts
+Alzheimer_Dataset/reports/
+reports/
+
+# Python cache files
+src/__pycache__/
+__pycache__/
+*.pyc
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
