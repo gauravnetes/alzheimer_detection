@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Alzheimer's Detection</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f9; text-align: center; margin-top: 50px; }
+        .container { background: white; padding: 2em; border-radius: 8px; display: inline-block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        input[type=file] { margin: 1em 0; }
+        input[type=submit] { background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        .result { margin-top: 2em; font-size: 1.2em; color: #2c3e50; font-weight: bold; }
+        .error { margin-top: 1em; color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alzheimer's Disease Detection</h1>
+        <p>Upload an MRI scan to get a prediction.</p>
+        
+        <form method="post" action="/" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br>
+            <input type="submit" value="Get Prediction">
+        </form>
+
+        {% if prediction_text %}
+            <div class="result">
+                Prediction: {{ prediction_text }}
+            </div>
+        {% endif %}
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
